@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/articleStylePage.css">
+    <title>مقاله ساز</title>
+</head>
+<body>
+<header>
+    <h2>مقاله ساز</h2>
+</header>
+<main>
+    <div class="creat-box">
+        <div>
+            <label>
+                <input  id="id-article" type="number" placeholder="آیدی مقاله ...">
+            </label>
+        </div>
+        <div class="img">
+            <h3>عکس مقاله :</h3>
+            <label>
+                <input id="img" type="file" placeholder="عکس مقاله ...">
+            </label>
+        </div>
+        <div class="heading">
+            <h3>تیتر مقاله :</h3>
+            <label>
+                <input id="titer" type="text" placeholder="تیتر مقاله ...">
+            </label>
+        </div>
+        <div class="content">
+            <h3>محتوای مقاله :</h3>
+            <label>
+                <textarea id="content" placeholder="محتوای مقاله ... "></textarea>
+            </label>
+        </div>
+        <div>
+            <button id="btnSend">ثبت مقاله</button>
+        </div>
+    </div>
+    <div class="article-demo">
+        <div class="img-article-demo">
+            <img id="img-article-demo" src="" alt="">
+        </div>
+        <div class="titer-article-demo">
+            <h1></h1>
+        </div>
+        <div class="content-article-demo">
+            <p></p>
+        </div>
+    </div>
+
+</main>
+<script src="js/creatArticle.js"></script>
+</body>
+</html>

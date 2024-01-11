@@ -1,0 +1,404 @@
+@font-face {
+  font-family: iranSans;
+  src: url("../FontsIranSans/ttf/IRANSansWeb(FaNum).ttf") format("opentype"),
+  url("../FontsIranSans/ttf/IRANSansWeb(FaNum)_Bold.ttf") format("opentype"),
+  url("../FontsIranSans/ttf/IRANSansWeb(FaNum)_Light.ttf") format("opentype"),
+  url("../FontsIranSans/ttf/IRANSansWeb(FaNum)_Medium.ttf") format("opentype"),
+  url("../FontsIranSans/ttf/IRANSansWeb(FaNum)_UltraLight.ttf") format("opentype");
+}
+
+* {
+  direction: rtl;
+  font-family: iranSans, 'sans-serif';
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+
+@mixin flexBox($justify : center , $align : center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  @content;
+}
+
+$border: rgba(0, 0, 0, .1);
+
+header {
+  width: 100%;
+  height: 5rem;
+  border-bottom: 1px solid $border;
+  box-shadow: 0 1px 6px $border;
+
+  nav {
+    ul {
+      @include flexBox() ;
+      width: 100%;
+      height: 5rem;
+
+      li {
+        margin-right: 1rem;
+
+        a {
+          display: inline-block;
+          border-bottom: 1px solid $border;
+          padding: 5px;
+          color: black;
+          transition: .1s;
+
+          &:hover {
+            padding-bottom: 10px;
+            border-bottom: 1px solid black;
+          }
+        }
+      }
+    }
+  }
+}
+
+.container-titer-image {
+  @include flexBox(space-between);
+  width: 100%;
+  height: auto;
+  background: #334155;
+
+  .img {
+    @include flexBox();
+    width: 50%;
+
+    img {
+      width: auto;
+      height: 41rem;
+    }
+  }
+
+  .titer {
+    @include flexBox() {
+      flex-flow: column;
+    }
+    width: 50%;
+    padding: 10px;
+
+    h1 {
+      color: white;
+      font-size: 2.4rem;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      color: white;
+    }
+
+    button {
+      color: white;
+      margin-top: 2rem;
+      background: $border;
+      outline: none;
+      border: 1px solid blue;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 10px;
+      font-size: 1rem;
+
+      img {
+        color: white;
+        margin-inline: 5px;
+        width: 10px;
+      }
+    }
+  }
+}
+
+
+/*                 main content site                 */
+#search-box {
+  @include flexBox() {
+    flex-flow: column;
+  }
+  width: 100%;
+
+  .container-input {
+    border-radius: 10px;
+    width: 50%;
+    padding: 10px;
+    border: 1px solid $border;
+    margin-top: 30px;
+    @include flexBox(flex-start);
+
+    img {
+      cursor: pointer;
+      margin-left: 1rem;
+    }
+
+    input {
+      font-size: 1rem;
+      width: 50rem;
+      border: none;
+      padding: 10px;
+      outline: none;
+    }
+  }
+}
+
+/*                 container search box                         */
+.container-result-search {
+  display: none;
+  position: relative;
+  top: 10px;
+  width: 50%;
+  min-height: 100px;
+  box-shadow: 0 1px 6px $border;
+  border-radius: 5px;
+
+  .result-search {
+    height: 50px;
+    @include flexBox(space-evenly);
+
+    &:nth-child(odd) {
+      background: $border;
+    }
+
+    button {
+      padding: 5px;
+      border: none;
+      background: #334155;
+      color: white;
+      cursor: pointer;
+      border-radius: 10px;
+    }
+  }
+}
+
+/*            box best doctor                  */
+.best-doctor {
+  text-align: center;
+  margin-top: 30px;
+
+  .container-best-doctor {
+    margin-top: 10px;
+    @include flexBox(space-evenly);
+    width: 100%;
+
+    .box-doctor {
+      padding: 10px;
+      border-radius: 10px;
+      border: 2px solid $border;
+      @include flexBox() {
+        flex-flow: column;
+      }
+    ;
+      width: 25%;
+
+      .profile img {
+        width: 100px;
+        height: 100px;
+      }
+
+      button {
+        padding: 8px;
+        background: $border;
+        color: white;
+        border: none;
+        margin-top: 10px;
+        border-radius: 10px;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+
+/*           abut site                         */
+
+.abut-site {
+  margin-top: 30px;
+  width: 100%;
+  background: #334155;
+  padding: 10px;
+
+  .img {
+    @include flexBox();
+    width: 100%;
+  }
+
+  .titer p {
+    text-align: center;
+    width: 90%;
+    color: white;
+    font-size: 1.5rem;
+    padding: 30px;
+  }
+}
+
+footer {
+  .info {
+    @include flexBox();
+    width: 100%;
+    height: 8rem;
+
+    .phone p {
+      direction: ltr;
+    }
+
+    .phone, .address {
+      width: 50%;
+      @include flexBox() {
+        flex-flow: column;
+        height: 100%;
+      }
+
+      h4 {
+        margin-bottom: 10px;
+      }
+    }
+
+  }
+
+  .footer {
+    @include flexBox();
+    width: 100%;
+    height: 5rem;
+    background: #334155;
+
+    h4 {
+      color: white;
+    }
+  }
+}
+
+.titer-box-article {
+  text-align: center;
+  margin: 30px 10px;
+}
+
+.container-article {
+  @include flexBox(space-evenly) {
+    flex-wrap: wrap;
+  }
+  width: 100%;
+  border-bottom: 2px solid $border;
+  padding: 20px;
+  box-shadow: 0 1px 6px $border;
+
+  .box-article {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid $border;
+    box-shadow: 0 1px 6px $border;
+    width: max(400px, 400px);
+    border-radius: 5px;
+
+    .img-head-article {
+      width: 100%;
+      height: 243px;
+
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    .titer-article {
+      word-break: break-all;
+      margin: 20px 0;
+    }
+
+    .btn-read-article {
+      width: 100%;
+      margin: 0 38px 13px 0;
+
+      button {
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        width: 80%;
+        outline: none;
+        background: green;
+        cursor: pointer;
+        color: white;
+        font-size: 16px;
+        transition: .3s;
+
+        &:hover {
+          background: lightgreen;
+        }
+      }
+    }
+  }
+}
+
+.container-advertising {
+  animation: fed .5 ease-in;
+  display: none;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, .13);
+  backdrop-filter: blur(5px);
+
+  button {
+    margin: 10px 5rem 0 0;
+    width: 8rem;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    font-size: 15px;
+    background: red;
+    color: white;
+
+    &:hover {
+      background: deeppink;
+    }
+  }
+
+  .advertising {
+    height: 100%;
+    @include flexBox() {
+      flex-flow: column;
+    }
+
+    h1 {
+      text-align: center;
+      border-radius: 5px;
+      background: black;
+      color: white;
+      padding: 10px;
+      width: 15rem;
+    }
+
+    a img {
+      margin-top: 10px;
+      width: 480px;
+      height: 480px;
+    }
+
+    button {
+      width: 8rem;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      outline: none;
+      font-size: 15px;
+    }
+  }
+}
+
+@keyframes fed {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: .5;
+  }
+  100% {
+    opacity: 1;
+  }
+
+}
